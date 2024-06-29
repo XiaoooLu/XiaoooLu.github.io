@@ -35,7 +35,7 @@ body {
 .header .header-center .header-title {
     text-align: center;
     color: #defcff;
-    font-size: 38px;
+    font-size: 32px;
     text-shadow: 0 0 20px #00d8ff;
     line-height: 100%;
     margin: 3%;
@@ -132,7 +132,7 @@ body {
     margin-top: 1.5%;
  }
  .left-container .showspot-button {
-    background-color: #ecf5ff;
+background-color: #ecf5ff;
     border: 2px solid #c6e2ff;
     color: var(--el-color-primary) !important;
     margin-top: 3%;
