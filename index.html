@@ -17,7 +17,7 @@
     <div class="scream" id="app">
         <div class="header">
             <div  class="header-left fl">   
-                <div v-if="weatherData">
+                <div v-if="weatherData" style="color: rgb(32, 146, 166);">
                     <p>{{ weatherData.city }}:&emsp;{{ weatherData.weather }}&emsp;{{ weatherData.temperature_float }}°C</p>
                     <p>风力风向：&nbsp;{{ weatherData.winddirection }}&nbsp;{{ weatherData.windpower}}级</p>
                 </div>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="header-img"></div>
             </div>
-            <div class="header-right fl">
+            <div class="header-right fl" style="color: rgb(32, 146, 166);">
                 <p>{{ date_show }} - {{ week }}</p>
                 <p>{{ time_show }}</p>
             </div>
@@ -42,9 +42,9 @@
                     </el-option>
                 </el-select>
                 <el-button @click="showScenicSpots" class="showspot-button">定位</el-button>
-                <div v-if="scenicSpots.length > 0" class="scenic-spots" >
+                <div v-if="scenicSpots.length > 0" class="scenic-spots">
                     <el-card v-for="(spot, index) in scenicSpots" :key="index" class="spot-list" @click="locateSpot(spot)">
-                        <h3 class="spot-name" @click="viewSpot(spot)">{{ spot.name }}</h3>
+                        <h3 class="spot-name" @click="viewSpot(spot)" style="color: rgb(186, 0, 0);">{{ spot.name }}</h3>
                         <p>{{ spot.location }}</p>
                     </el-card>
                 </div>
