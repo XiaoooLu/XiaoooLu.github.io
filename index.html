@@ -1,1 +1,72 @@
-<h1>测试</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>景区查询</title>
+    <meta charset="utf-8" />
+    <script src="./src/vue2.js"></script>
+    <script src="./src/leaflet.js"></script>  
+    <script src="./src/element-ui.js"></script>  
+    <script src="./src/jquery.min.js"></script>
+    <link rel="stylesheet" href="./src/index.css" /> 
+    <link rel="stylesheet" href="./src/leaflet.css" />
+    <link rel="stylesheet" href="./src/element-ui.css">       
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./src/scenicSpots.json" id="scenicSpotsData" type="application/json"></script> 
+</head>
+<body>
+    <div class="scream" id="app">
+        <div class="header">
+            <div  class="header-left fl">   
+                <div>
+                    <p></p>
+                </div>
+            </div>
+            <div class="header-center fl">
+                <div class="header-title">标题</div>
+                <div class="header-img"></div>
+            </div>
+            <div class="header-right fl">
+                <p></p>
+                <p></p>
+            </div>
+            <div class="header-bottom fl"></div>
+        </div>
+        <div class="main-container">       
+            <div class="left-container">
+                <el-select  class="province-select">
+                    <el-option></el-option>
+                </el-select>
+                <el-button class="showspot-button">查询按钮</el-button>
+                <div  class="scenic-spots" >
+                    <el-card  class="spot-list" >
+                        <h3 class="spot-name"></h3>
+                        <p></p>
+                    </el-card>
+                </div>
+            </div>        
+            <div class="div_any_child div_height">
+                <div class="map-container">
+                    <div id="mapid"></div>
+                </div>
+            </div>        
+        </div>
+    </div>
+</body>
+    <script type="text/javascript"> 
+            var tileUrl = {
+                "Sat": {
+                    "TIANDITU": "http://{s}.tianditu.gov.cn/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={z}&TileRow={y}&TileCol={x}&style=default&format=tiles&tk=a9fcde75424f2e3035fc50fc53ddb9a9",
+                    "TIANDITU_L": "http://{s}.tianditu.gov.cn/cia_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cia&tileMatrixSet=w&TileMatrix={z}&TileRow={y}&TileCol={x}&style=default&format=tiles&tk=a9fcde75424f2e3035fc50fc53ddb9a9"
+                },
+                "Vect": {
+                    "TIANDITU": "http://{s}.tianditu.gov.cn/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={z}&TileRow={y}&TileCol={x}&style=default&format=tiles&tk=a9fcde75424f2e3035fc50fc53ddb9a9",
+                    "TIANDITU_L": "http://{s}.tianditu.gov.cn/cia_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cia&tileMatrixSet=w&TileMatrix={z}&TileRow={y}&TileCol={x}&style=default&format=tiles&tk=a9fcde75424f2e3035fc50fc53ddb9a9"
+                },
+                "Terr": {
+                    "TIANDITU": "http://{s}.tianditu.gov.cn/ter_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=ter&tileMatrixSet=w&TileMatrix={z}&TileRow={y}&TileCol={x}&style=default&format=tiles&tk=a9fcde75424f2e3035fc50fc53ddb9a9",
+                    "TIANDITU_L": "http://{s}.tianditu.gov.cn/cta_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cta&tileMatrixSet=w&TileMatrix={z}&TileRow={y}&TileCol={x}&style=default&format=tiles&tk=a9fcde75424f2e3035fc50fc53ddb9a9"
+                }
+            };
+    </script>
+<script src="./src/index.js"></script>
+</html>
